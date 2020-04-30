@@ -18,6 +18,7 @@
   },
   "homepage": "https://github.com/peterapps/fulljs",
   "dependencies": {
+    "ejs": "^3.1.2",
     "express": "^4.17.1",
     "mongodb": "^3.5.7",
     "prop-types": "^15.7.2",
