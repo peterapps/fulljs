@@ -18,16 +18,19 @@
   },
   "homepage": "https://github.com/peterapps/fulljs",
   "dependencies": {
+    "axios": "^0.19.2",
     "ejs": "^3.1.2",
     "express": "^4.17.1",
+    "json-loader": "^0.5.7",
     "mongodb": "^3.5.7",
+    "node-sass-middleware": "^0.11.0",
     "prop-types": "^15.7.2",
     "react": "^16.13.1",
     "react-dom": "^16.13.1"
   },
   "devDependencies": {
-    "@babel/node": "7.x",
     "@babel/core": "^7.9.6",
+    "@babel/node": "7.x",
     "@babel/plugin-proposal-class-properties": "^7.8.3",
     "@babel/preset-env": "^7.9.6",
     "@babel/preset-react": "^7.9.4",
