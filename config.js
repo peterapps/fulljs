@@ -13,5 +13,6 @@ export default {
   host: env.HOST || '0.0.0.0',
   get serverUrl(){
     return 'http://' + this.host + ':' + this.port;
-  }
+  },
+  mongodbUri: 'mongodb://localhost:27017/test'
 };

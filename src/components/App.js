@@ -40,6 +40,7 @@ class App extends React.Component {
 
   componentWillUnmount(){
     // Clean timers and event listeners
+    onPopState(null);
   }
 
   currentContest(){
@@ -49,6 +50,15 @@ class App extends React.Component {
   pageHeader(){
     if (this.state.currentContestId) return this.currentContest().contestName;
     return 'Naming Contests';
+  }
+
+  fetchNames = (nameIds) => {
+    if (nameIds.length == 0) return;
+    api.fetchNames(nameIds).then(names => {
+      this.setState({
+        names
+      });
+    });
   }
 
   fetchContest = (contestId) => {
@@ -78,10 +88,17 @@ class App extends React.Component {
     });
   }
 
+  lookupName = (nameId) => {
+    if (!this.state.names || !this.state.names[nameId]) return {name:'Loading name...'};
+    return this.state.names[nameId];
+  }
+
   currentContent(){
     if (this.state.currentContestId){
       return <Contest
         contestListClick={this.fetchContestList}
+        fetchNames={this.fetchNames}
+        lookupName={this.lookupName}
         {...this.currentContest()}
       />
     } else {
